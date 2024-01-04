@@ -1,3 +1,6 @@
 [submodule "cicd/apps/team-project-frontend"]
 	path = cicd/apps/team-project-frontend
 	url = https://github.com/Honghao-Zheng/team-project-frontend.git
+[submodule "cicd/apps/java-backend"]
+	path = cicd/apps/java-backend
+	url = https://github.com/Honghao-Zheng/java-backend.git

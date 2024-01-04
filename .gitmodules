@@ -1,3 +1,0 @@
-[submodule "cicd_pipeline/team-project-frontend"]
-	path = cicd_pipeline/team-project-frontend
-	url = https://github.com/Honghao-Zheng/team-project-frontend.git

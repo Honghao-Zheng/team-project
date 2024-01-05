@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-frontend-app
-        image: public.ecr.aws/a5z6u3o2/react-cicd:11
+        image: public.ecr.aws/a5z6u3o2/react-cicd:10
         ports:
         - containerPort: 80
         env:

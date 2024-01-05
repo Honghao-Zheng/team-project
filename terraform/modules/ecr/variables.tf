@@ -1,21 +1,24 @@
 variable "ecr_name" {
-  description = "The list of ecr names to create"
-  type        = list(string)
+  description = "The name of the ECR registry"
+  type        = any
   default     = null
 }
-variable "tags" {
-  description = "The key-value maps for tagging"
-  type        = map(string)
-  default     = {}
-}
+
 variable "image_mutability" {
   description = "Provide image mutability"
   type        = string
-  default     = "MUTABLE"
+  default     = "IMMUTABLE"
 }
+
 
 variable "encrypt_type" {
   description = "Provide type of encryption here"
   type        = string
   default     = "KMS"
+}
+
+variable "tags" {
+  description = "The key-value maps for tagging"
+  type        = map(string)
+  default     = {}
 }

@@ -17,6 +17,6 @@ spec:
         image: public.ecr.aws/a5z6u3o2/react-cicd:10
         ports:
         - containerPort: 80
-        # env:
-        #   - name: VITE_API_BASE_URL
-        #     value: http://backend-service.default.svc.cluster.local:8080
+        env:
+          - name: VITE_API_BASE_URL
+            value: http://backend-service.default.svc.cluster.local:8081

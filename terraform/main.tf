@@ -22,3 +22,14 @@ module "app_servers" {
      public_subnets = module.vpc.public_subnets
      aws_security_group_app_server = module.security.aws_security_group_app_server
 }
+
+module "ecr" {
+  source           = "./modules/ecr"
+  ecr_name         = var.ecr_name
+  tags             = var.tags
+  image_mutability = var.image_mutability
+}
+
+module "rds" {
+  source           = "./modules/rds"
+}

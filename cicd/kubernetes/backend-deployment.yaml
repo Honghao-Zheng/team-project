@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: my-backend-app
-        image: public.ecr.aws/a5z6u3o2/java-cicd:11
+        image: public.ecr.aws/a5z6u3o2/java-cicd:3
         ports:
         - containerPort: 8080

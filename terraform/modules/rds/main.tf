@@ -10,4 +10,7 @@ resource "aws_db_instance" "default" {
   password              = "password"
   skip_final_snapshot   = true
   publicly_accessible   = true
-}
+  multi_az              = false
+  availability_zone     = "eu-west-2a"
+  db_subnet_group_name  = var.public_subnets[0]
+  }

@@ -3,7 +3,7 @@ tags = {
 }
 
 ecr_name = [
-  "teamproject/frontend"
+  "teamproject/frontend", "teamproject/backend"
 ]
 
 image_mutability = "IMMUTABLE"

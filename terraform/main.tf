@@ -29,3 +29,7 @@ module "ecr" {
   tags             = var.tags
   image_mutability = var.image_mutability
 }
+
+module "rds" {
+  source           = "./modules/rds"
+}

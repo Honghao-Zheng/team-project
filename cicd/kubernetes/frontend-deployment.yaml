@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployement
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: my-frontend-app
+        #this image has env varible of the backend url set to http://localhost:80 which is the url of the ingress controller
+        image: public.ecr.aws/a5z6u3o2/react-cicd:18
+        ports:
+        - containerPort: 80

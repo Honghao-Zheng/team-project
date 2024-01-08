@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - host: aa6ef795b7d2843e798ef8877848e44a-a863021ac1eb138d.elb.eu-west-2.amazonaws.com
+    http:
+      # the path to java backend has to be place first in order for it to be matched
+      paths:
+      - path: /api/v1/customers
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80
+  ingressClassName: nginx

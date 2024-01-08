@@ -19,3 +19,35 @@ variable "encrypt_type" {
   type        = string
   default     = "KMS"
 }
+
+# for eks cluster
+variable "vpc_name" {
+  description = "Name of the VPC to place cluster in"
+  type        = string
+  default     = "eks-vpc"
+}
+
+variable "cluster_name" {
+  description = "Name you wish to give to your EKS cluster"
+  type        = string
+  default     = "eks-cluster"
+}
+
+variable "region" {
+  description = "AWS region"
+  type        = string
+  default     = "eu-west-2"
+}
+
+//testing
+
+
+# variable "vpc_id" {
+#   description = "The ID of the VPC to place the cluster id"
+#   type        = string
+# }
+
+# variable "private_subnets" {
+#   description = "Private Subnet IDs for the cluster"
+#   type        = list(string)
+# }

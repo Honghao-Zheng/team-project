@@ -1,4 +1,4 @@
-resource "aws_db_instance" "default" {
+resource "aws_db_instance" "rds-database" {
   allocated_storage     = 10
   max_allocated_storage = 50
   db_name               = "mydb"

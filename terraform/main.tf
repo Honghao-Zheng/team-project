@@ -1,11 +1,11 @@
 # module "vpc" {
 #     source = "./modules/vpc"
-    
+
 # }
 
 module "security" {
-    source = "./modules/security"
-    vpc_id = module.networking.vpc_id
+  source = "./modules/security"
+  vpc_id = module.networking.vpc_id
 }
 
 # module "load-balancer" {
@@ -32,23 +32,24 @@ module "ecr" {
 }
 
 module "rds" {
-  source           = "./modules/rds"
-  public_subnets = module.networking.public_subnets
+  source                 = "./modules/rds"
+  public_subnets         = module.networking.public_subnets
+  rds_security_group = [module.security.rds_security_group] 
 
 }
 
 # For eks cluster
 # Provision the VPC network
 module "networking" {
-    source          = "./modules/networking"
+  source = "./modules/networking"
 
-    vpc_name        = var.vpc_name
-    cluster_name    = var.cluster_name
+  vpc_name     = var.vpc_name
+  cluster_name = var.cluster_name
 }
 
 # Provision cluster
 module "eks_cluster" {
-    source  = "terraform-aws-modules/eks/aws"
+  source  = "terraform-aws-modules/eks/aws"
   version = "19.15.2"
 
   cluster_name    = var.cluster_name

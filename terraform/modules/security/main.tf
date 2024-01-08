@@ -109,10 +109,10 @@ resource "aws_security_group" "rds-security" {
 
 resource "aws_security_group_rule" "rds-inboud-rule" {
   type              = "ingress"
-  from_port         = 80
-  to_port           = 80
+  from_port         = 5432
+  to_port           = 5432
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.ingress_control.id
+  security_group_id = aws_security_group.rds-security.id
 }

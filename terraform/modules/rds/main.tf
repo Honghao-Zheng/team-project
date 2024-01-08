@@ -22,4 +22,6 @@ resource "aws_db_instance" "default" {
   multi_az              = false
   availability_zone     = "eu-west-2a"
   db_subnet_group_name  = aws_db_subnet_group.subnet_group.name
-  }
+  vpc_security_group_ids = var.rds_security_group
+}
+  

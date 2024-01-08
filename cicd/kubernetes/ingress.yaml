@@ -4,7 +4,7 @@ metadata:
   name: my-ingress
 spec:
   rules:
-  - host: localhost
+  - host: aa6ef795b7d2843e798ef8877848e44a-a863021ac1eb138d.elb.eu-west-2.amazonaws.com
     http:
       # the path to java backend has to be place first in order for it to be matched
       paths:
@@ -14,7 +14,7 @@ spec:
           service:
             name: backend-service
             port:
-              number: 8080      
+              number: 8080
       - path: /
         pathType: Prefix
         backend:

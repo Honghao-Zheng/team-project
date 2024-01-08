@@ -16,6 +16,11 @@ spec:
       - name: my-frontend-app
         #this image has env varible of the backend url set to http://localhost:80 which is the url of the ingress controller
         #Because the browser contains the front-end codes will send request to the ingress controller 
-        image: public.ecr.aws/a5z6u3o2/react-cicd:18
+        # image: khanrana/frontend:t4
+        image: khanrana/frontend:v1
+        # image: public.ecr.aws/a5z6u3o2/react-cicd:18
         ports:
         - containerPort: 80
+        # env:
+        # - name: VITE_API_BASE_URL
+        #   value: http://localhost:80

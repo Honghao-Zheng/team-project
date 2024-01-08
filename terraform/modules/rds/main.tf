@@ -1,8 +1,17 @@
-resource "aws_db_instance" "rds-database" {
+resource "aws_db_subnet_group" "subnet_group" {
+  name       = "subnet_group"
+  subnet_ids = var.public_subnets
+
+  tags = {
+    Name = "subnet_group"
+  }
+}
+
+resource "aws_db_instance" "default" {
   allocated_storage     = 10
   max_allocated_storage = 50
   db_name               = "mydb"
-  identifier            = "backend-database"
+  identifier            = "nimbus-database"
   engine                = "postgres"
   engine_version        = "15.5"
   instance_class        = "db.t3.micro"
@@ -10,4 +19,7 @@ resource "aws_db_instance" "rds-database" {
   password              = "password"
   skip_final_snapshot   = true
   publicly_accessible   = true
-}
+  multi_az              = false
+  availability_zone     = "eu-west-2a"
+  db_subnet_group_name  = aws_db_subnet_group.subnet_group.name
+  }

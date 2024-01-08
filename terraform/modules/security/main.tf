@@ -74,25 +74,25 @@ resource "aws_security_group_rule" "allow_https_egress" {
   security_group_id = aws_security_group.egress_control.id
 }
 
-resource "aws_security_group_rule" "allow_ssh_egress" {
-  type              = "egress"
-  from_port         = 22
-  to_port           = 28
-  protocol          = "tcp"
-  cidr_blocks       = ["143.159.0.0/16"]
-  ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.egress_control.id
-}
+# resource "aws_security_group_rule" "allow_ssh_egress" {
+#   type              = "egress"
+#   from_port         = 22
+#   to_port           = 28
+#   protocol          = "tcp"
+#   cidr_blocks       = ["143.159.0.0/16"]
+#   ipv6_cidr_blocks  = ["::/0"]
+#   security_group_id = aws_security_group.egress_control.id
+# }
 
-resource "aws_security_group_rule" "allow_3000_egress" {
-  type              = "egress"
-  from_port         = 3000
-  to_port           = 3000
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.egress_control.id
-}
+# resource "aws_security_group_rule" "allow_3000_egress" {
+#   type              = "egress"
+#   from_port         = 3000
+#   to_port           = 3000
+#   protocol          = "tcp"
+#   cidr_blocks       = ["0.0.0.0/0"]
+#   ipv6_cidr_blocks  = ["::/0"]
+#   security_group_id = aws_security_group.egress_control.id
+# }
 
 
 resource "aws_security_group" "app_server" {
@@ -101,3 +101,18 @@ resource "aws_security_group" "app_server" {
   vpc_id      = var.vpc_id
 }
 
+resource "aws_security_group" "rds-security" {
+  name        = "rds-security"
+  description = "Security group for rds database"
+  vpc_id      = var.vpc_id
+}
+
+resource "aws_security_group_rule" "rds-inboud-rule" {
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  ipv6_cidr_blocks  = ["::/0"]
+  security_group_id = aws_security_group.ingress_control.id
+}

@@ -3,10 +3,10 @@
     
 # }
 
-# module "security" {
-#     source = "./modules/security"
-#     vpc_id = module.vpc.vpc_id
-# }
+module "security" {
+    source = "./modules/security"
+    vpc_id = module.networking.vpc_id
+}
 
 # module "load-balancer" {
 #     source = "./modules/load-balancer"
@@ -33,6 +33,8 @@ module "ecr" {
 
 module "rds" {
   source           = "./modules/rds"
+  public_subnets = module.networking.public_subnets
+
 }
 
 # For eks cluster

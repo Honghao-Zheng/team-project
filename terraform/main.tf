@@ -34,10 +34,17 @@ module "ecr" {
 module "rds" {
   source                 = "./modules/rds"
   public_subnets         = module.networking.public_subnets
+  db_name               = var.db_name
+  identifier            = var.identifier
+  engine                = var.engine
+  engine_version        = var.engine_version
+  instance_class        = var.instance_class
+  username              = var.username
+  password              = var.password
   rds_security_group = [module.security.rds_security_group] 
+  availability_zone     = var.availability_zone
 
 }
-
 # For eks cluster
 # Provision the VPC network
 module "networking" {

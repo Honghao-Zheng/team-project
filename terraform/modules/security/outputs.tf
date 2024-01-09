@@ -9,3 +9,7 @@ output "aws_security_group_egress" {
 output "aws_security_group_app_server" {
     value = aws_security_group.app_server.id
 }
+
+output "rds_security_group" {
+  value = aws_security_group.rds-security.id
+}

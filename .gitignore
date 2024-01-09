@@ -1,0 +1,6 @@
+*.tfstate
+*.lock
+.terraform
+.backup
+*.tfstate.backup
+*.tfstate*

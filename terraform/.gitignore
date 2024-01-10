@@ -1,4 +1,0 @@
-*.tfstate
-*.lock
-.terraform
-.backup

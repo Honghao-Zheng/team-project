@@ -4,7 +4,7 @@ metadata:
   name: my-ingress
 spec:
   rules:
-  - host: aa6ef795b7d2843e798ef8877848e44a-a863021ac1eb138d.elb.eu-west-2.amazonaws.com
+  - host:  a599bba2031994e61bce2e9f06a7429c-fc887fac34298006.elb.eu-west-2.amazonaws.com 
     http:
       # the path to java backend has to be place first in order for it to be matched
       paths:

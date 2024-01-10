@@ -15,12 +15,12 @@ spec:
             name: frontend-service
             port:
               number: 80
-      # - path: /api/v1/customers
-      #   pathType: Prefix
-      #   backend:
-      #     service:
-      #       name: backend-service
-      #       port:
-      #         number: 8080
+      - path: /api/v1/customers
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 8080
 
   ingressClassName: nginx

@@ -8,13 +8,6 @@ spec:
     http:
       # the path to java backend has to be place first in order for it to be matched
       paths:
-      - path: /api/v1/customers
-        pathType: Prefix
-        backend:
-          service:
-            name: backend-service
-            port:
-              number: 8080
       - path: /
         pathType: Prefix
         backend:
@@ -22,4 +15,12 @@ spec:
             name: frontend-service
             port:
               number: 80
+      - path: /api/v1/customers
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 8080
+
   ingressClassName: nginx

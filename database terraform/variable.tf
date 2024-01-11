@@ -1,11 +1,3 @@
-variable "public_subnets" { 
-    type = list(string)
-}
-
-variable "rds_security_group" {
-  type = list(string)
-}
-
 variable "engine" {
   type = string
 }
@@ -31,8 +23,5 @@ variable "username" {
 }
 
 variable "password" {
-  type = string
-}
-variable "availability_zone" {
   type = string
 }

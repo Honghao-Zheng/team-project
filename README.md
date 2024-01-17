@@ -11,8 +11,7 @@
 - [Usage](#usage)
 - [CI/CD Pipeline](#cicd-pipeline)
 - [Kubernetes Configuration](#kubernetes-configuration)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Overview
 

@@ -16,7 +16,7 @@
 
 ## Overview
 
-This repository contains the infrastructure-as-code (IaC) setup for an Amazon EKS (Elastic Kubernetes Service) cluster using Terraform. The EKS cluster hosts a React frontend, Java backend with PostgreSQL as the database. The project includes a CI/CD pipeline implemented with CircleCI and ArgoCD for automated deployment.
+This repository contains the infrastructure-as-code (IaC) setup for an Amazon EKS (Elastic Kubernetes Service) cluster using Terraform. The EKS cluster hosts a Leaner Management System using React frontend, Java backend with PostgreSQL as the database. The project includes a CI/CD pipeline implemented with CircleCI and ArgoCD for automated deployment.
 
 ## Features
 
@@ -47,7 +47,6 @@ Before you begin, ensure you have the following prerequisites:
    ```bash
    cp terraform.tfvars.example terraform.tfvars
     ```
-   Edit **terraform.tfvars** with your AWS credentials and other required variables.
 
 3. **Initialize and apply Terraform:**
     ```bash
@@ -66,16 +65,7 @@ Deployment using ArgoCD.
 Refer to the **\`.circleci/config.yml\`** file for pipeline details.
 
 ## Kubernetes Configuration
-Kubernetes configuration files (**\`k8s/\`**) are provided for the frontend and backend services. Adjust these files as needed for your application.
+Kubernetes configuration files (**\`cicd/kubernetes/\`**) are provided for the frontend and backend services. Adjust these files as needed for your application.
 
-Ingress rules are defined in **\`k8s/ingress.yaml\`** for routing external traffic.
+Ingress rules are defined in **\`cicd/kubernetes/ingress.yaml\`** for routing external traffic.
 
-## Contributing
-Contributions are welcome! Follow these steps to contribute:
-
-Fork the repository.
-Create a new branch: git checkout -b feature/your-feature-name.
-Make your changes and commit: git commit -m 'Add new feature'.
-Push to the branch: git push origin feature/your-feature-name.
-Create a pull request.
-Please follow our Contribution Guidelines for more details.
